@@ -1,2 +1,2 @@
 # youtube-clone
-**This is just a hobby project for gain some experience in web Development.**
+**This is just a hobby project to gain some experience in web Development.**
