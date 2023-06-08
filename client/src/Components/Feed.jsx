@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Navbar = () => {
+const Feed = () => {
   return (
     <div>
-      
+      Feed
     </div>
   )
 }
 
-export default Navbar
+export default Feed
