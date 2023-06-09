@@ -1,8 +1,8 @@
 import React from "react";
 import { Button, Stack } from "@mui/material";
 import { categories } from "../Assets/constants";
-const selectedCategory = "New";
-const Sidebar = () => {
+// const selectedCategory = "New";  It si of no use now as it is coming from props
+const Sidebar = (selectedCategory,setselectedCategory) => {
   return (
     <Stack
       direction="row"
@@ -15,6 +15,8 @@ const Sidebar = () => {
       {categories.map((category) => (
         <Button
           className="category-btn"
+
+          onClick={()=> setselectedCategory(category.name)}
           style={{
             background: category.name === selectedCategory && "#FC1503",
             color: "white",
