@@ -22,6 +22,7 @@ const Navbar = () => {
       </Link>
       <SearchBar/>
     </Stack> // p means padding, sx prompt is used to give any style to material ui components. This can be learned for any component of materialUI from there documentation. Just hover over that component and go over the 'demo' or 'API' section.
+    // Stack is like div. Can learn more about it in its docs
     
   );
 };
