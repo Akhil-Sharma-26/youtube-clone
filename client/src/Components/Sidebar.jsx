@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Stack } from "@mui/material";
 import { categories } from "../Assets/constants";
 // const selectedCategory = "New";  It si of no use now as it is coming from props
-const Sidebar = (selectedCategory,setselectedCategory) => {
+const Sidebar = ({selectedCategory,setselectedCategory}) => { // Please Take care of {} brackets in React. Took a day to resolve an error here.
   return (
     <Stack
       direction="row"
@@ -18,7 +18,7 @@ const Sidebar = (selectedCategory,setselectedCategory) => {
 
           onClick={()=> setselectedCategory(category.name)}
           style={{
-            // background: category.name === selectedCategory && "#FC1503",
+            background: category.name === selectedCategory && "#FC1503",
             color: "white",
           }}
           key={category.name}

@@ -1,10 +1,18 @@
 import React from 'react'
-
-const Videos = () => {
+import { Stack,Box } from '@mui/material'
+import VideoCard from './VideoCard'
+import ChannelCard from './ChannelCard'
+const Videos = ({videos}) => {
+  // console.log(videos)
   return (
-    <div>
-      
-    </div>
+    <Stack direction='row' flexWrap='wrap' justifyContent='start' gap={2}>
+      {videos.map((item,idx)=>(
+        <Box key={idx}>
+          {item.id.videoId && <VideoCard video={item}/>}
+          {item.id.channelId && <ChannelCard chanelDetail={item}/>}
+        </Box> // If a item has an Id and if it points to a video then render a videocard with prop of 'item'.
+      ))}
+    </Stack>
   )
 }
 

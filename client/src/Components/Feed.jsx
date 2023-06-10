@@ -7,10 +7,12 @@ import { fetchFromAPI } from "../Assets/fetchFromAPI";
 
 const Feed = () => {
   const [selectedCategory, setselectedCategory] = useState("New");
+  const [videos,setVideos]=useState([]);
   useEffect(() => {
-    fetchFromAPI(`search?part=snippet&q=${selectedCategory}`);
+    fetchFromAPI(`search?part=snippet&q=${selectedCategory}`).then((data)=>setVideos(data.items));
   }, [selectedCategory]); // useEffect is a life cycle hook which is called when a component is initially loaded
   // To make it dynamic, turn it into a  template string using ``.
+  // With async functions, we have to use .then
   return (
     <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
       <Box
@@ -41,9 +43,9 @@ const Feed = () => {
           sx={{ color: "white" }}
         >
           {selectedCategory}
-          <span style={{ color: "#F31503" }}> Videos</span>
+          <span style={{ color: "#F31503"}}> Videos</span>
         </Typography>
-        <Videos />
+        <Videos videos={videos}/>
       </Box>
     </Stack>
   );
