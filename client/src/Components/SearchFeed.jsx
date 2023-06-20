@@ -26,5 +26,5 @@ const SearchFeed = () => {
     </Box>
   );
 };
-
+// Almost similar to the main Feed
 export default SearchFeed;

@@ -34,5 +34,8 @@ const VideoCard = ({ video: { id: { videoId }, snippet } }) => ( // Card media c
     </CardContent>
   </Card>
 );
+// Adding a link inside a card makes the whole card clickable
+// if the title doesn't exist then we render demoVideoTitle which prints 60 characters using slice function.
+// CheckCircle
 
 export default VideoCard

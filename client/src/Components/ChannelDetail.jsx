@@ -11,11 +11,12 @@ const ChannelDetail = () => {
   const [channelDetail, setChannelDetail] = useState();
   const [videos, setVideos] = useState(null);
 
-  const { id } = useParams();
+  const { id } = useParams(); // Destrucutring the id using Params
 
   useEffect(() => {
     const fetchResults = async () => {
       const data = await fetchFromAPI(`channels?part=snippet&id=${id}`);
+      //
 
       setChannelDetail(data?.items[0]);
 
@@ -35,14 +36,14 @@ const ChannelDetail = () => {
           background: 'linear-gradient(90deg, rgba(0,238,247,1) 0%, rgba(206,3,184,1) 100%, rgba(0,212,255,1) 100%)',
           zIndex: 10,
         }} />
-        <ChannelCard channelDetail={channelDetail} marginTop="-93px" />
+        <ChannelCard channelDetail={channelDetail} marginTop="-93px" /> 
       </Box>
       <Box p={2} display="flex">
       <Box sx={{ mr: { sm: '100px' } }}/>
         <Videos videos={videos} />
       </Box>
     </Box>
-  );
+  ); // MarginTop is added in channeCard as a prop to make it reusable with different settings in different pages
 };
 
 export default ChannelDetail;

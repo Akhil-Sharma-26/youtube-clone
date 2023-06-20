@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, CardContent, CardMedia, Typography } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { Link } from 'react-router-dom';
-import { demoProfilePicture } from '../Assets/constants';
+import { demoProfilePicture } from '../Assets/constants'; // these beloaw in the ({}) are called props
 const ChannelCard = ({ channelDetail, marginTop }) => (
   <Box
     sx={{
@@ -33,7 +33,7 @@ const ChannelCard = ({ channelDetail, marginTop }) => (
           }
           alt={channelDetail?.snippet?.title}
           sx={{
-            borderRadius: "50%",
+            borderRadius: "50%", //makes it a circle
             height: "180px",
             width: "180px",
             mb: 2,
@@ -46,10 +46,11 @@ const ChannelCard = ({ channelDetail, marginTop }) => (
             sx={{ fontSize: "14px", color: "gray", ml: "5px" }}
           />
         </Typography>
-        {channelDetail?.statistics?.subscriberCount && (
+        {channelDetail?.statistics?.subscriberCount && // IF subscribercount exists then render it and with the following styles:
+        (
           <Typography sx={{ fontSize: "15px", fontWeight: 500, color: "gray" }}>
             {parseInt(
-              channelDetail?.statistics?.subscriberCount
+              channelDetail?.statistics?.subscriberCount // prints in a human readable form
             ).toLocaleString("en-US")}{" "}
             Subscribers
           </Typography>
