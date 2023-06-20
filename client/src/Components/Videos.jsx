@@ -2,13 +2,14 @@ import React from 'react'
 import { Stack,Box } from '@mui/material'
 import VideoCard from './VideoCard'
 import ChannelCard from './ChannelCard'
-const Videos = ({videos}) => {
+const Videos = ({videos,direction}) => {
   // console.log(videos)
   if (!videos) {
     return null; // or any other appropriate handling for null/empty case
-  } 
+  } // Either do above method OR
+  if(!videos?.length) return 'loading...';
   return (
-    <Stack direction='row' flexWrap='wrap' justifyContent='start' gap={2}>
+    <Stack direction={direction||'row'} flexWrap='wrap' justifyContent='start' gap={2}>
       {videos.map((item,idx)=>(
         <Box key={idx}>
           {item.id.videoId && <VideoCard video={item}/>}
