@@ -5,7 +5,6 @@ import React from "react";
 import { Stack } from "@mui/material";
 
 import { categories } from "../Assets/constants";
-
 // const selectedCategory = "New";  It si of no use now as it is coming from props
 const Categories = ({ selectedCategory, setSelectedCategory }) => ( // Please Take care of {} brackets in React. Took a day to resolve an error here.
   <Stack
