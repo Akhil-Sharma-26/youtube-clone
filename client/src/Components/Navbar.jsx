@@ -10,7 +10,7 @@ const Navbar = () => {
       alignItems={"center"}
       p={2}
       sx={{
-        position: "sticky",
+        // position: "sticky",
         background: "#000",
         top: 0,
         justifyContent: "space-between",
@@ -18,7 +18,7 @@ const Navbar = () => {
     >
       
       <Link to='/' style={{display:'flex',alignItems:'center'}}>
-        <img src={logo} alt="logo" height={45}/>
+        <img src={logo} alt="logo" height={45} sx={{innerWidth:"100%"}}/>
       </Link>
       <SearchBar/>
     </Stack> // p means padding, sx prompt is used to give any style to material ui components. This can be learned for any component of materialUI from there documentation. Just hover over that component and go over the 'demo' or 'API' section.
